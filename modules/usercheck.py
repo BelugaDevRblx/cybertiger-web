@@ -1,4 +1,4 @@
-    import requests
+import requests
 
 PLATFORMS = {
     "GitHub": "https://github.com/{}",
