@@ -146,3 +146,24 @@ footer {
     line-height: 1.6;
     margin-bottom: 12px;
 }
+
+textarea {
+    width: 90%;
+    max-width: 700px;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #30363d;
+    background-color: #1e1e1e;
+    color: #c9d1d9;
+}
+
+.chat-response {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: left;
+    color: #c9d1d9;
+}

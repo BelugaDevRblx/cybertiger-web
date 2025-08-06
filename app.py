@@ -4,6 +4,9 @@ import modules.anonymous_mailer as anonymous_mailer
 import modules.usercheck as usercheck
 import modules.emailbreach as emailbreach
 import os
+import openai
+from dotenv import load_dotenv
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -47,6 +50,31 @@ def email_breach():
         email = request.form.get('email')
         links = emailbreach.generate_email_leak_links(email)
     return render_template("tools/emailbreach.html", links=links)
+
+# Charger clé API
+load_dotenv()
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+@app.route("/chat", methods=["GET", "POST"])
+def chat():
+    response = None
+    if request.method == "POST":
+        user_input = request.form.get("user_input")
+
+        try:
+            completion = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",  # ou gpt-4 si tu as accès
+                messages=[
+                    {"role": "system", "content": "Tu es l'assistant de CyberTiger, expert en cybersécurité et OSINT."},
+                    {"role": "user", "content": user_input}
+                ]
+            )
+            response = completion.choices[0].message.content
+
+        except Exception as e:
+            response = f"Erreur : {e}"
+
+    return render_template("tools/chat.html", response=response)
 
 @app.route('/credits')
 def credits():
