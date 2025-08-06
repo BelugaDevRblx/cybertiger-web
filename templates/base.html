@@ -29,10 +29,15 @@ document.addEventListener("DOMContentLoaded", function() {
         <h1>🐯 CyberTiger Web</h1>
         <nav>
         <a href="/">🏠 Accueil</a>
+        {% if current_user.is_authenticated %}
         <a href="/chat">💬 Chat</a>
         <a href="/profile">👤 Profil</a>
         <a href="/logout">🚪 Déconnexion</a>
-        <button id="theme-toggle">🌓 Thème</button>
+    {% else %}
+        <a href="/login">🔐 Connexion</a>
+        <a href="/register">📝 Inscription</a>
+    {% endif %}
+    <button id="theme-toggle">🌓 Thème</button>
     </nav>
     </header>
 
