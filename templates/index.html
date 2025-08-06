@@ -1,13 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Bienvenue sur CyberTiger Web 🐾</h2>
-<p>Choisis un outil :</p>
-<ul class="menu">
-    <li><a href="/whois">🔍 WHOIS & DNS Lookup</a></li>
-    <li><a href="/password">🔐 Test de mot de passe</a></li>
-    <li><a href="/anonymous-email">📧 Email Anonyme</a></li>
-    <li><a href="/usercheck">📛 Username Cross-Checker</a></li>
-    <li><a href="/emailbreach">📨 Email Leak Checker</a></li>
-    <!-- Ajoute les autres outils ici -->
-</ul>
+
+<section class="intro">
+    <h2>Bienvenue dans la suite CyberTiger</h2>
+    <p>Choisissez un outil pour commencer :</p>
+</section>
+
+<div class="tool-grid">
+
+    <a href="/whois" class="tool-button">🌐 Whois & DNS Lookup</a>
+    <a href="/anonymous-email" class="tool-button">📧 Email Anonyme</a>
+    <a href="/usercheck" class="tool-button">📛 Username Checker</a>
+    <a href="/emailbreach" class="tool-button">📨 Email Leak Checker</a>
+
+    <!-- Placeholders pour outils futurs -->
+    <a href="#" class="tool-button disabled">🔐 Password Strength (bientôt)</a>
+    <a href="#" class="tool-button disabled">📡 IP Locator (bientôt)</a>
+
+</div>
+
 {% endblock %}
