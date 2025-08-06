@@ -77,6 +77,25 @@ main {
     cursor: not-allowed;
 }
 
+.back-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 25px;
+    background-color: #21262d;
+    color: #c9d1d9;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid #30363d;
+}
+
+.back-button:hover {
+    background-color: #30363d;
+    transform: scale(1.05);
+    color: white;
+}
+
 /* Footer */
 footer {
     background: #161b22;
@@ -85,4 +104,29 @@ footer {
     padding: 20px;
     font-size: 14px;
     border-top: 1px solid #30363d;
+}
+
+.ascii-banner {
+    font-family: monospace;
+    white-space: pre;
+    background-color: #0d1117;
+    padding: 20px;
+    text-align: left;
+    font-size: 12px;
+    overflow-x: auto;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.ascii-banner .blue {
+    color: #58a6ff;
+}
+
+.ascii-banner .white {
+    color: #c9d1d9;
+}
+
+.ascii-banner .red {
+    color: #ff7b72;
 }
