@@ -3,6 +3,7 @@ import modules.domain_tools as domain_tools
 import modules.anonymous_mailer as anonymous_mailer
 import modules.usercheck as usercheck
 import modules.emailbreach as emailbreach
+import os
 
 app = Flask(__name__)
 
@@ -49,4 +50,5 @@ def email_breach():
 
 # Lancement
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
