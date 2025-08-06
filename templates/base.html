@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>CyberTiger Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <h1>🐯 CyberTiger Web Toolkit</h1>
+        <nav>
+            <a href="/">🏠 Accueil</a>
+            <a href="/whois">🌐 Whois</a>
+            <a href="/anonymous-email">📧 Email Anonyme</a>
+            <a href="/usercheck">📛 Username</a>
+            <a href="/emailbreach">📨 Breach Email</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2025 CyberTiger — Open Source | For Ethical Use Only</p>
+    </footer>
+</body>
+</html>

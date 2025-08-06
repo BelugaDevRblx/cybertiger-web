@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>📧 Envoyer un Email Anonyme</h2>
+
+<form method="POST">
+    <input type="email" name="to_email" placeholder="destinataire@example.com" required>
+    <button type="submit">Envoyer</button>
+</form>
+
+{% if status %}
+    {% if status.success %}
+        <p style="color:green;"><strong>{{ status.message }}</strong></p>
+    {% else %}
+        <p style="color:red;"><strong>{{ status.message }}</strong></p>
+    {% endif %}
+{% endif %}
+{% endblock %}

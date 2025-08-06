@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>📨 Vérification de Fuites (Email Leak Checker)</h2>
+
+<form method="POST">
+    <input type="email" name="email" placeholder="email@example.com" required>
+    <button type="submit">Vérifier</button>
+</form>
+
+{% if links %}
+    <h3>🔍 Résultats pour : <strong>{{ links.email }}</strong></h3>
+    <p><strong>⚠️ L'API HIBP est payante. Ces liens permettent une vérification manuelle :</strong></p>
+
+    <ul>
+        <li><a href="{{ links.hibp_url }}" target="_blank">🔗 HaveIBeenPwned</a></li>
+        <li><a href="{{ links.leakcheck_url }}" target="_blank">🔗 LeakCheck</a></li>
+        <li><a href="{{ links.dehashed_url }}" target="_blank">🔗 DeHashed</a></li>
+    </ul>
+{% endif %}
+{% endblock %}

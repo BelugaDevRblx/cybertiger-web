@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>📛 Vérification de pseudo sur les plateformes</h2>
+
+<form method="POST">
+    <input type="text" name="username" placeholder="Entrez un pseudo" required>
+    <button type="submit">Rechercher</button>
+</form>
+
+{% if results %}
+    <h3>Résultats pour : <strong>{{ results.username }}</strong></h3>
+
+    {% if results.found %}
+        <h4 style="color:lime;">✅ Présent sur :</h4>
+        <ul>
+            {% for platform, url in results.found %}
+                <li><a href="{{ url }}" target="_blank">{{ platform }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p style="color:orange;">Aucune présence trouvée.</p>
+    {% endif %}
+
+    {% if results.not_found %}
+        <h4 style="color:red;">❌ Absent sur :</h4>
+        <ul>
+            {% for platform in results.not_found %}
+                <li>{{ platform }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if results.errors %}
+        <h4 style="color:gold;">⚠️ Erreurs :</h4>
+        <ul>
+            {% for platform, msg in results.errors %}
+                <li>{{ platform }} → {{ msg }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endif %}
+{% endblock %}

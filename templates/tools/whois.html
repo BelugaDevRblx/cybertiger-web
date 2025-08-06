@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>🔍 WHOIS & DNS Lookup</h2>
+
+<form method="POST">
+    <input type="text" name="domain" placeholder="example.com" required>
+    <button type="submit">Analyser</button>
+</form>
+
+{% if result %}
+    {% if result.success %}
+        <div class="result">
+            <p><strong>Domaine :</strong> {{ result.domain }}</p>
+            <p><strong>Adresse IP :</strong> {{ result.ip }}</p>
+            <p><strong>Registrar :</strong> {{ result.registrar }}</p>
+            <p><strong>Création :</strong> {{ result.creation_date }}</p>
+            <p><strong>Expiration :</strong> {{ result.expiration_date }}</p>
+            <p><strong>DNS :</strong>
+                <ul>
+                    {% for ns in result.name_servers %}
+                        <li>{{ ns }}</li>
+                    {% endfor %}
+                </ul>
+            </p>
+        </div>
+    {% else %}
+        <p style="color:red;"><strong>Erreur :</strong> {{ result.error }}</p>
+    {% endif %}
+{% endif %}
+{% endblock %}

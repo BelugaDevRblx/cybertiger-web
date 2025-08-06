@@ -1,0 +1,85 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    margin: 0;
+}
+
+header {
+    background: #161b22;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: #58a6ff;
+    font-size: 28px;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    margin: 0 10px;
+    color: #8b949e;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+main {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+button {
+    padding: 10px 15px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+input[type="text"],
+input[type="email"] {
+    background-color: #1e2228;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+}
+
+button {
+    background-color: #238636;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2ea043;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 8px 0;
+}
+
+footer {
+    background-color: #161b22;
+    color: #8b949e;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
