@@ -130,3 +130,19 @@ footer {
 .ascii-banner .red {
     color: #ff7b72;
 }
+
+.credits {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+    background: #161b22;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    border: 1px solid #30363d;
+}
+
+.credits p {
+    line-height: 1.6;
+    margin-bottom: 12px;
+}

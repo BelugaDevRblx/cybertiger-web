@@ -48,6 +48,10 @@ def email_breach():
         links = emailbreach.generate_email_leak_links(email)
     return render_template("tools/emailbreach.html", links=links)
 
+@app.route('/credits')
+def credits():
+    return render_template("credits.html")
+
 # Lancement
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
