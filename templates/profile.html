@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="profile-box">
+    <h2>👤 Profil</h2>
+    <p><strong>Nom d'utilisateur :</strong> {{ user.username }}</p>
+    <p><strong>Pseudo affiché :</strong> {{ user.pseudo }}</p>
+    <p><strong>Messages enregistrés :</strong> {{ total }}</p>
+
+    <a href="/reset_chat" class="danger-button">🧹 Réinitialiser l’historique</a>
+    <a href="/chat" class="back-button">⬅️ Retour au Chat</a>
+</div>
+
+{% endblock %}

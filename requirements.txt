@@ -1,5 +1,9 @@
-Flask
+flask
 requests
-openai
+flask
+flask-login
+flask-sqlalchemy
+werkzeug
+openai==1.3.5
 python-dotenv
 python-whois

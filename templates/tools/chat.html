@@ -1,20 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>🤖 ChatGPT - Assistant CyberTiger</h2>
+<div class="chat-container">
+    <h2>🤖 Assistant ChatGPT – Bienvenue {{ pseudo }}</h2>
 
-<form method="POST">
-    <textarea name="user_input" rows="4" cols="50" placeholder="Pose ta question sur la cybersécurité, l’OSINT, etc." required></textarea><br>
-    <button type="submit">Envoyer</button>
-</form>
+    <div class="chat-box">
+        {% for msg in history %}
+            <div class="bubble {{ msg.role }}">
+                <strong>{{ '🧑' if msg.role == 'user' else '🤖' }}</strong>
+                {{ msg.content }}
+            </div>
+        {% endfor %}
 
-{% if response %}
-    <div class="chat-response">
-        <h3>Réponse :</h3>
-        <p>{{ response }}</p>
+        {% if response %}
+            <div class="bubble assistant"><strong>🤖</strong> {{ response }}</div>
+        {% endif %}
     </div>
-{% endif %}
 
-<a href="/" class="back-button">⬅️ Retour au menu</a>
+    <form method="POST" class="chat-form">
+        <textarea name="user_input" rows="3" placeholder="Pose ta question..." required></textarea>
+        <button type="submit">Envoyer</button>
+    </form>
+
+    <a href="/" class="back-button">⬅️ Retour au menu</a>
+</div>
 
 {% endblock %}

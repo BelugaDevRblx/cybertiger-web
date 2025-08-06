@@ -167,3 +167,143 @@ textarea {
     text-align: left;
     color: #c9d1d9;
 }
+
+/* AUTH PAGES */
+.auth-container {
+    max-width: 400px;
+    margin: 40px auto;
+    background: #161b22;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+}
+
+.auth-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.auth-container form input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 5px;
+    color: white;
+}
+
+.auth-container button {
+    width: 100%;
+    padding: 10px;
+    background: #238636;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.auth-container button:hover {
+    background: #2ea043;
+}
+
+/* CHAT INTERFACE */
+.chat-container {
+    max-width: 700px;
+    margin: 30px auto;
+}
+
+.chat-box {
+    background: #161b22;
+    border: 1px solid #30363d;
+    padding: 20px;
+    border-radius: 8px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.bubble {
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    white-space: pre-wrap;
+}
+
+.bubble.user {
+    background: #238636;
+    text-align: right;
+    color: white;
+}
+
+.bubble.assistant {
+    background: #30363d;
+    text-align: left;
+    color: #c9d1d9;
+}
+
+.chat-form textarea {
+    width: 100%;
+    padding: 12px;
+    background: #0d1117;
+    color: white;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    resize: vertical;
+}
+
+.chat-form button {
+    margin-top: 10px;
+    padding: 10px 25px;
+    background: #238636;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.chat-form button:hover {
+    background: #2ea043;
+}
+
+.profile-box {
+    max-width: 500px;
+    margin: 40px auto;
+    background: var(--bg);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #30363d;
+    text-align: left;
+}
+
+.danger-button {
+    background: #b91c1c;
+    padding: 12px 20px;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.danger-button:hover {
+    background: #dc2626;
+}
+
+:root {
+    --bg: #161b22;
+    --text: #c9d1d9;
+}
+
+.light {
+    --bg: #ffffff;
+    --text: #1f2937;
+    background-color: white;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}

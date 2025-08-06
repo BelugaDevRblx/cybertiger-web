@@ -1,5 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+        document.documentElement.classList.add("light");
+    }
+
+    const toggle = document.getElementById("theme-toggle");
+    if (toggle) {
+        toggle.addEventListener("click", () => {
+            document.documentElement.classList.toggle("light");
+            const current = document.documentElement.classList.contains("light") ? "light" : "dark";
+            localStorage.setItem("theme", current);
+        });
+    }
+});
+</script>
 <head>
     <meta charset="UTF-8">
     <title>CyberTiger Web</title>
@@ -11,9 +28,12 @@
     <header>
         <h1>🐯 CyberTiger Web</h1>
         <nav>
-            <a href="/">🏠 Accueil</a>
-            <a href="/credits">📜 Crédits</a>
-        </nav>
+        <a href="/">🏠 Accueil</a>
+        <a href="/chat">💬 Chat</a>
+        <a href="/profile">👤 Profil</a>
+        <a href="/logout">🚪 Déconnexion</a>
+        <button id="theme-toggle">🌓 Thème</button>
+    </nav>
     </header>
 
     <main>
